@@ -1,0 +1,21 @@
+****LEET CODE PROBLEM 14 ****
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input string
+
+'''SORTING APPROACH'''
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
+        strs.sort()
+        s1=strs[0]
+        s2=strs[-1]
+        ind=0
+        while(len(s1)>ind and len(s2)>ind and s1[ind]==s2[ind]):
+            ind+=1
+        return s1[:ind]
